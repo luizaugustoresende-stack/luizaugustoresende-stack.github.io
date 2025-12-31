@@ -1,39 +1,113 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Tira Dúvidas de Direito</title>
-<style>
-body { font-family: Arial; background:#f4f4f4; padding:20px }
-h1 { text-align:center }
-.card { background:#fff; padding:15px; margin:10px 0; border-radius:5px }
-a { text-decoration:none; color:#003366; font-weight:bold }
-input,button { padding:10px; width:100%; margin-top:10px }
-#resultados { background:#fff; padding:15px; margin-top:10px; border-radius:5px }
-</style>
+  <meta charset="UTF-8">
+  <title>Tira Dúvidas de Direito</title>
+  <meta name="description" content="Portal gratuito para tirar dúvidas de Direito, com leis, códigos jurídicos e modelos de petições.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      background: rgba(255,255,255,0.95);
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    header h1 {
+      margin-top: 0;
+      color: #2b2b2b;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #1a4c7a;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-top: 30px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #ccc;
+      padding-top: 15px;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Tira Dúvidas de Direito</h1>
-<p style="text-align:center">Portal jurídico gratuito com leis, modelos e FAQ.</p>
+  <div class="container">
 
-<input type="text" id="pesquisa" placeholder="Digite o assunto ou dúvida">
-<button onclick="buscar()">Buscar</button>
-<div id="resultados"></div>
+    <header>
+      <h1>Tira Dúvidas de Direito</h1>
+      <p>
+        Portal jurídico gratuito com acesso a leis, códigos e modelos de documentos,
+        voltado a estudantes, profissionais e cidadãos em geral.
+      </p>
+    </header>
 
-<div class="card"><a href="areas/familia.html">⚖️ Direito de Família</a></div>
-<div class="card"><a href="areas/trabalho.html">💼 Direito do Trabalho</a></div>
-<div class="card"><a href="areas/penal.html">🚔 Direito Penal</a></div>
-<div class="card"><a href="areas/consumidor.html">🛒 Direito do Consumidor</a></div>
-<div class="card"><a href="faq.html">❓ Dúvidas Comuns (FAQ)</a></div>
+    <nav>
+      <ul>
+        <li><a href="leis/constituicao.html">Constituição Federal</a></li>
+        <li><a href="leis/codigo-civil.html">Código Civil</a></li>
+        <li><a href="leis/codigo-penal.html">Código Penal</a></li>
+        <li><a href="leis/clt.html">CLT</a></li>
+        <li><a href="modelos/">Modelos Jurídicos</a></li>
+      </ul>
+    </nav>
 
-<hr>
-<p style="text-align:center">
-<a href="politica-de-privacidade.html">Privacidade</a> |
-<a href="termos-de-uso.html">Termos</a> |
-<a href="aviso-legal.html">Aviso Legal</a>
-</p>
+    <section>
+      <h2>O que você encontra aqui</h2>
+      <ul>
+        <li>Principais leis brasileiras explicadas de forma objetiva</li>
+        <li>Códigos jurídicos organizados por temas</li>
+        <li>Modelos de petições, procurações e requerimentos</li>
+        <li>Conteúdo gratuito e de acesso público</li>
+      </ul>
+    </section>
 
-<script src="busca.js"></script>
+    <section>
+      <h2>Aviso importante</h2>
+      <p>
+        Este site tem caráter informativo e educacional.
+        Não substitui a consulta a um advogado habilitado.
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        © 2025 – Tira Dúvidas de Direito  
+        <br>
+        Conteúdo jurídico de domínio público e informativo.
+      </p>
+    </footer>
+
+  </div>
+
 </body>
 </html>
