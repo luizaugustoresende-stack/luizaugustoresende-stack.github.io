@@ -1,75 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Tira Dúvidas de Direito</title>
-<link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tira Dúvidas de Direito</title>
+  <link rel="stylesheet" href="estilo.css">
 </head>
-
 <body>
 
-<header class="topo">
-  <h1>Tira Dúvidas de Direito</h1>
-  <p>Leis, códigos e modelos jurídicos em um só lugar</p>
-</header>
+  <!-- CABEÇALHO -->
+  <header>
+    <h1>Tira Dúvidas de Direito</h1>
+    <p>Seu portal de leis, modelos e respostas jurídicas</p>
+  </header>
 
-<nav class="menu">
-  <a href="index.html">Início</a>
-  <a href="modelos.html">Modelos</a>
-  <a href="leis.html">Leis e Códigos</a>
-  <a href="tira-duvidas.html">Tira Dúvidas</a>
-  <a href="busca.html">Busca</a>
-</nav>
+  <!-- MENU -->
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="modelos.html">Modelos</a>
+    <a href="leis.html">Leis e Códigos</a>
+    <a href="tira-duvidas.html">Tira Dúvidas</a>
+    <a href="busca.html">Busca</a>
+    <a href="contato.html">Contato</a>
+  </nav>
 
-<main class="conteudo">
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="conteudo">
 
-<section class="busca">
-  <h2>Buscar por assunto</h2>
-  <input type="text" id="campoBusca" placeholder="Ex: pensão, recurso, CLT">
-  <button onclick="buscar()">Buscar</button>
-</section>
+    <section class="cards">
+      <div class="card">
+        <h3>Modelos Jurídicos</h3>
+        <p>Acesse petições, recursos, procurações e impugnações prontas.</p>
+        <a href="modelos.html">Ver Modelos</a>
+      </div>
+      <div class="card">
+        <h3>Leis e Códigos</h3>
+        <p>Consulte Código Civil, Penal, CLT, Constituição e outros.</p>
+        <a href="leis.html">Ver Leis</a>
+      </div>
+      <div class="card">
+        <h3>Tira Dúvidas</h3>
+        <p>Faça perguntas sobre Direito e receba respostas detalhadas.</p>
+        <a href="tira-duvidas.html">Tirar Dúvida</a>
+      </div>
+      <div class="card">
+        <h3>Busca Avançada</h3>
+        <p>Encontre rapidamente leis, modelos ou dúvidas por assunto.</p>
+        <a href="busca.html">Pesquisar</a>
+      </div>
+    </section>
 
-<section class="cards">
+  </main>
 
-  <div class="card">
-    <h3>📄 Modelos Jurídicos</h3>
-    <p>Petições, recursos, agravos, impugnações e contestações.</p>
-    <a href="modelos.html">Acessar</a>
-  </div>
-
-  <div class="card">
-    <h3>⚖️ Leis e Códigos</h3>
-    <p>Código Civil, Penal, CLT, Constituição Federal.</p>
-    <a href="leis.html">Ver Leis</a>
-  </div>
-
-  <div class="card">
-    <h3>❓ Tira Dúvidas</h3>
-    <p>Dúvidas jurídicas comuns explicadas de forma objetiva.</p>
-    <a href="tira-duvidas.html">Consultar</a>
-  </div>
-
-</section>
-
-</main>
-
-<footer class="rodape">
-  <a href="aviso-legal.html">Aviso Legal</a> |
-  <a href="privacidade.html">Privacidade</a> |
-  <a href="contato.html">Contato</a>
-  <p>© 2026 - Tira Dúvidas de Direito</p>
-</footer>
-
-<script>
-function buscar() {
-  const termo = document.getElementById("campoBusca").value.trim();
-  if (!termo) {
-    alert("Digite um termo para buscar.");
-    return;
-  }
-  window.location.href = "busca.html?q=" + encodeURIComponent(termo);
-}
-</script>
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p>© 2026 Tira Dúvidas de Direito | Todos os direitos reservados</p>
+    <p>
+      <a href="privacidade.html">Política de Privacidade</a> |
+      <a href="aviso-legal.html">Aviso Legal</a>
+    </p>
+  </footer>
 
 </body>
 </html>
