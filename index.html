@@ -4,173 +4,171 @@
 <meta charset="UTF-8">
 <title>Tira Dúvidas de Direito</title>
 
-<style>
-* { box-sizing: border-box; }
+<link rel="stylesheet" href="estilo.css">
 
+<style>
+/* Fallback de segurança caso o CSS externo falhe */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") no-repeat center center fixed;
-  background-size: cover;
+  background: #f2f2f2;
 }
 
 header {
-  background: #1e1e1e;
+  background: #1e2a38;
   color: #fff;
-  padding: 15px 25px;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background: #2f3e4e;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-header nav a {
+nav a {
   color: #fff;
-  margin-left: 15px;
   text-decoration: none;
-  font-weight: bold;
+  padding: 14px 20px;
 }
 
-header nav a:hover {
-  text-decoration: underline;
+nav a:hover {
+  background: #445c73;
 }
 
 main {
   max-width: 1100px;
-  margin: 40px auto;
-  background: rgba(255,255,255,0.96);
+  margin: auto;
   padding: 30px;
-  border-radius: 8px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  margin-top: 30px;
 }
 
 .card {
-  background: #f0f0f0;
-  padding: 20px;
-  border-radius: 6px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #1e2a38;
+  font-weight: bold;
   text-decoration: none;
-  color: #000;
-  transition: transform 0.2s;
 }
 
-.card:hover {
-  transform: scale(1.03);
-  background: #e6e6e6;
+.card a:hover {
+  text-decoration: underline;
 }
 
-form {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+.busca {
+  margin: 40px 0;
+  text-align: center;
 }
 
-input {
-  flex: 1;
-  padding: 10px;
+.busca input {
+  width: 70%;
+  padding: 12px;
   font-size: 16px;
 }
 
-button {
-  padding: 10px 20px;
+.busca button {
+  padding: 12px 20px;
   font-size: 16px;
   cursor: pointer;
 }
 
-ul li {
-  margin: 10px 0;
-}
-
 footer {
-  background: #1e1e1e;
+  background: #1e2a38;
   color: #fff;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
 }
 </style>
-</head>
 
+<script>
+function buscar() {
+  const termo = document.getElementById("campoBusca").value.trim();
+  if (termo === "") {
+    alert("Digite um termo para buscar.");
+    return;
+  }
+  window.location.href = "busca.html?q=" + encodeURIComponent(termo);
+}
+</script>
+
+</head>
 <body>
 
 <header>
-  <div>🏛️ Tira Dúvidas de Direito</div>
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#busca">Busca</a>
-  </nav>
+  <h1>Tira Dúvidas de Direito</h1>
+  <p>Modelos jurídicos, leis completas e esclarecimento de dúvidas comuns</p>
 </header>
 
-<main id="inicio">
-  <h1>Portal Jurídico Gratuito</h1>
+<nav>
+  <a href="index.html">Início</a>
+  <a href="tira-duvidas.html">Tira Dúvidas</a>
+  <a href="modelos.html">Modelos Jurídicos</a>
+  <a href="leis.html">Leis e Códigos</a>
+  <a href="busca.html">Busca</a>
+</nav>
 
-  <p>
-    Tire dúvidas jurídicas, consulte leis e utilize modelos de petições.
-    Conteúdo informativo.
-  </p>
+<main>
 
-  <section class="cards">
-    <a href="modelos.html" class="card">
-      <h2>📄 Modelos Jurídicos</h2>
-      <p>Apelação, Agravo, Impugnação, Recursos e mais.</p>
-    </a>
+<section class="busca">
+  <h2>Busca por assunto</h2>
+  <input type="text" id="campoBusca" placeholder="Ex: pensão alimentícia, recurso, CLT...">
+  <button onclick="buscar()">Buscar</button>
+</section>
 
-    <a href="leis.html" class="card">
-      <h2>⚖️ Leis e Códigos</h2>
-      <p>Constituição, Códigos, CLT e legislação.</p>
-    </a>
-  </section>
+<section class="cards">
 
-  <hr>
+  <div class="card">
+    <h3>📄 Modelos Jurídicos</h3>
+    <p>Petições iniciais, recursos, agravos, impugnações, contestações e mais.</p>
+    <a href="modelos.html">Acessar modelos</a>
+  </div>
 
-  <h2 id="busca">Busca por assunto</h2>
+  <div class="card">
+    <h3>⚖️ Leis e Códigos</h3>
+    <p>Código Civil, Penal, CLT, Constituição Federal e legislação essencial.</p>
+    <a href="leis.html">Ver leis completas</a>
+  </div>
 
-  <form onsubmit="buscar(event)">
-    <input id="pergunta" type="text" placeholder="Digite sua dúvida ou assunto jurídico" required>
-    <button type="submit">Buscar</button>
-  </form>
+  <div class="card">
+    <h3>❓ Tira Dúvidas</h3>
+    <p>Dúvidas jurídicas comuns organizadas por tema.</p>
+    <a href="tira-duvidas.html">Tirar dúvidas</a>
+  </div>
 
-  <ul id="resultado"></ul>
+</section>
+
 </main>
 
 <footer>
-  © 2025 – Conteúdo informativo
+  <p>
+    <a href="aviso-legal.html">Aviso Legal</a> |
+    <a href="privacidade.html">Política de Privacidade</a> |
+    <a href="contato.html">Contato</a>
+  </p>
+  <p>© 2026 - Tira Dúvidas de Direito</p>
 </footer>
-
-<script>
-function buscar(e) {
-  e.preventDefault();
-
-  const termo = document.getElementById("pergunta").value.toLowerCase();
-  const resultado = document.getElementById("resultado");
-  resultado.innerHTML = "";
-
-  const dados = [
-    { texto: "Apelação", link: "modelos.html" },
-    { texto: "Agravo de Instrumento", link: "modelos.html" },
-    { texto: "Impugnação", link: "modelos.html" },
-    { texto: "Constituição Federal", link: "leis.html" },
-    { texto: "Código Civil", link: "leis.html" },
-    { texto: "CLT", link: "leis.html" }
-  ];
-
-  const achados = dados.filter(d => d.texto.toLowerCase().includes(termo));
-
-  if (achados.length === 0) {
-    resultado.innerHTML = "<li>Nenhum resultado encontrado.</li>";
-    return;
-  }
-
-  achados.forEach(item => {
-    const li = document.createElement("li");
-    li.innerHTML = `<a href="${item.link}">${item.texto}</a>`;
-    resultado.appendChild(li);
-  });
-}
-</script>
 
 </body>
 </html>
