@@ -2,30 +2,71 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Código Penal Brasileiro</title>
+<title>Código Penal – Tira Dúvidas de Direito</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(120deg, #2c3e50, #4b6584);
+    background: linear-gradient(120deg, #1e272e, #485460);
 }
+
+/* CABEÇALHO */
 header {
-    padding: 30px;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
     text-align: center;
     color: #fff;
 }
+
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* BUSCA */
+.search-box {
+    margin-top: 15px;
+}
+
+.search-box input {
+    width: 70%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+}
+
+/* CONTEÚDO */
 .container {
-    max-width: 1000px;
-    margin: 30px auto;
+    max-width: 1100px;
+    margin: 40px auto;
     background: #ffffff;
     padding: 30px;
     border-radius: 8px;
 }
-p {
+
+.article {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.article h3 {
+    color: #2c3e50;
+}
+
+.article p {
     line-height: 1.6;
     color: #333;
 }
+
+/* RODAPÉ */
 footer {
     text-align: center;
     color: #eee;
@@ -37,26 +78,79 @@ footer {
 <body>
 
 <header>
-<h1>Código Penal Brasileiro</h1>
-<p>Decreto-Lei nº 2.848, de 7 de dezembro de 1940</p>
+    <h1>Código Penal</h1>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="codigo-civil.html">Código Civil</a>
+        <a href="codigo-penal.html">Código Penal</a>
+        <a href="clt.html">CLT</a>
+        <a href="constituicao.html">Constituição</a>
+    </nav>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Buscar por artigo ou crime (ex: furto, homicídio, dolo)">
+    </div>
 </header>
 
 <div class="container">
 
-<p><strong>Art. 1º</strong> Não há crime sem lei anterior que o defina. Não há pena sem prévia cominação legal.</p>
+<div class="article" data-keywords="artigo 1 legalidade penal">
+<h3>Art. 1º – Princípio da Legalidade</h3>
+<p>
+Não há crime sem lei anterior que o defina. Não há pena sem prévia cominação legal.
+</p>
+</div>
 
-<p><strong>Art. 2º</strong> Ninguém pode ser punido por fato que lei posterior deixa de considerar crime.</p>
+<div class="article" data-keywords="artigo 13 nexo causal resultado">
+<h3>Art. 13 – Nexo Causal</h3>
+<p>
+O resultado, de que depende a existência do crime, somente é imputável a quem lhe deu causa.
+</p>
+</div>
 
-<p><strong>Art. 14</strong> Diz-se o crime:
-I – consumado, quando nele se reúnem todos os elementos de sua definição legal;
-II – tentado, quando, iniciada a execução, não se consuma por circunstâncias alheias à vontade do agente.</p>
+<div class="article" data-keywords="artigo 18 dolo culpa">
+<h3>Art. 18 – Dolo e Culpa</h3>
+<p>
+Diz-se o crime doloso, quando o agente quis o resultado ou assumiu o risco de produzi-lo.
+<br>
+Diz-se o crime culposo, quando o agente deu causa ao resultado por imprudência, negligência ou imperícia.
+</p>
+</div>
 
-<p><strong>Art. 18</strong> Diz-se o crime:
-I – doloso, quando o agente quis o resultado ou assumiu o risco de produzi-lo;
-II – culposo, quando o agente deu causa ao resultado por imprudência, negligência ou imperícia.</p>
+<div class="article" data-keywords="artigo 121 homicidio matar alguem">
+<h3>Art. 121 – Homicídio</h3>
+<p>
+Matar alguém:  
+<br>
+Pena – reclusão, de seis a vinte anos.
+</p>
+</div>
 
-<p><strong>Art. 121</strong> Matar alguém: Pena – reclusão, de seis a vinte anos.</p>
+<div class="article" data-keywords="artigo 155 furto subtrair coisa alheia">
+<h3>Art. 155 – Furto</h3>
+<p>
+Subtrair, para si ou para outrem, coisa alheia móvel:  
+<br>
+Pena – reclusão, de um a quatro anos, e multa.
+</p>
+</div>
 
-<p><strong>Art. 155</strong> Subtrair, para si ou para outrem, coisa alheia móvel: Pena – reclusão, de um a quatro anos, e multa.</p>
+<div class="article" data-keywords="artigo 157 roubo violencia grave ameaca">
+<h3>Art. 157 – Roubo</h3>
+<p>
+Subtrair coisa móvel alheia, para si ou para outrem, mediante grave ameaça ou violência à pessoa.
+</p>
+</div>
 
-<p><strong>Art. 171</strong> Obter, para si ou para outrem, vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, mediante artifício, ardil, ou qualquer
+</div>
+
+<footer>
+© Tira Dúvidas de Direito
+</footer>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const articles = document.querySelectorAll(".article");
+
+searchInput.addEventListener("
