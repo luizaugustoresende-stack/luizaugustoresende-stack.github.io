@@ -22,8 +22,8 @@
   <h1>Busca por assunto</h1>
 
   <form onsubmit="buscar(event)">
-    <input type="text" id="termo" placeholder="Digite: apelação, CLT, agravo..." required>
-    <button type="submit">Buscar</button>
+    <input type="text" id="termo" placeholder="Digite sua dúvida ou assunto jurídico" required>
+    <button type="submit">Pesquisar</button>
   </form>
 
   <ul id="resultado" class="lista"></ul>
@@ -32,8 +32,8 @@
 <footer class="rodape">© 2025</footer>
 
 <script>
-function buscar(event) {
-  event.preventDefault();
+function buscar(e) {
+  e.preventDefault();
 
   const termo = document.getElementById("termo").value.toLowerCase();
   const resultado = document.getElementById("resultado");
@@ -42,21 +42,22 @@ function buscar(event) {
   const dados = [
     { texto: "Apelação", link: "modelos/apelacao.html" },
     { texto: "Agravo de Instrumento", link: "modelos/agravo-instrumento.html" },
+    { texto: "Impugnação", link: "modelos/impugnacao.html" },
     { texto: "Constituição Federal", link: "leis/constituicao.html" },
     { texto: "Código Civil", link: "leis/codigo-civil.html" },
     { texto: "CLT", link: "leis/clt.html" }
   ];
 
-  const encontrados = dados.filter(item =>
+  const achados = dados.filter(item =>
     item.texto.toLowerCase().includes(termo)
   );
 
-  if (encontrados.length === 0) {
+  if (achados.length === 0) {
     resultado.innerHTML = "<li>Nenhum resultado encontrado.</li>";
     return;
   }
 
-  encontrados.forEach(item => {
+  achados.forEach(item => {
     const li = document.createElement("li");
     li.innerHTML = `<a href="${item.link}">${item.texto}</a>`;
     resultado.appendChild(li);
