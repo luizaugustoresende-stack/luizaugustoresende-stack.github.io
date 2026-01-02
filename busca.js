@@ -1,26 +1,63 @@
-const conteudos = [
-  {titulo:"Pensão Alimentícia", link:"modelos/peticao-alimentos.html", keywords:["pensão","alimentos","família"]},
-  {titulo:"Divórcio Consensual", link:"modelos/peticao-divorcio.html", keywords:["divórcio","família"]},
-  {titulo:"Reclamação Trabalhista", link:"modelos/reclamacao-trabalhista.html", keywords:["trabalho","demissão","rescisão"]},
-  {titulo:"Procuração", link:"modelos/procuracao.html", keywords:["procuração","documento"]},
-  {titulo:"Código Civil", link:"leis/codigo-civil.html", keywords:["civil","lei"]},
-  {titulo:"CLT", link:"leis/clt.html", keywords:["trabalho","clt"]},
-  {titulo:"Código Penal", link:"leis/codigo-penal.html", keywords:["penal","crime"]},
-  {titulo:"Constituição", link:"leis/constituicao.html", keywords:["constituição","direitos"]}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Busca Jurídica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+  <h1>Tira Dúvidas de Direito</h1>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="tira-duvidas.html">Tira Dúvidas</a>
+    <a href="busca.html">Busca por Assunto</a>
+    <a href="modelos.html">Modelos Jurídicos</a>
+    <a href="leis.html">Leis e Códigos</a>
+  </nav>
+</header>
+
+<main>
+<h2>Busca por Assunto</h2>
+
+<input type="text" id="busca" placeholder="Digite: agravo, CLT, recurso..." />
+
+<ul id="resultados"></ul>
+</main>
+
+<footer>© 2025 – Tira Dúvidas de Direito</footer>
+
+<script>
+const dados = [
+  { nome: "Agravo de Instrumento", link: "modelos.html" },
+  { nome: "Apelação", link: "modelos.html" },
+  { nome: "Contestação", link: "modelos.html" },
+  { nome: "Código Civil", link: "leis.html" },
+  { nome: "Código Penal", link: "leis.html" },
+  { nome: "CLT", link: "leis.html" },
+  { nome: "Constituição Federal", link: "leis.html" }
 ];
 
-function buscar(){
-  let query = document.getElementById("pesquisa").value.toLowerCase();
-  let resultados = conteudos.filter(item => item.keywords.some(k => query.includes(k)));
-  let html = "";
-  if(resultados.length>0){
-    html="<ul>";
-    resultados.forEach(r=>{
-      html+=`<li><a href="${r.link}">${r.titulo}</a></li>`;
-    });
-    html+="</ul>";
-  } else {
-    html="<p>Nenhum resultado encontrado. Tente palavras diferentes ou veja o FAQ.</p>";
-  }
-  document.getElementById("resultados").innerHTML = html;
-}
+const input = document.getElementById("busca");
+const lista = document.getElementById("resultados");
+
+input.addEventListener("keyup", () => {
+  lista.innerHTML = "";
+  const termo = input.value.toLowerCase();
+
+  dados.forEach(item => {
+    if (item.nome.toLowerCase().includes(termo)) {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = item.link;
+      a.textContent = item.nome;
+      li.appendChild(a);
+      lista.appendChild(li);
+    }
+  });
+});
+</script>
+
+</body>
+</html>
