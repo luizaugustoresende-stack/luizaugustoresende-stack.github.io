@@ -1,163 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Busca Geral – Tira Dúvidas de Direito</title>
-
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background: linear-gradient(120deg,#2c2c2c,#4a4a4a);
-}
-header{
-  background: rgba(0,0,0,.8);
-  color:#fff;
-  padding:25px;
-  text-align:center;
-}
-nav a{
-  color:#fff;
-  margin:0 10px;
-  text-decoration:none;
-  font-weight:bold;
-}
-nav a:hover{ text-decoration:underline; }
-
-.search-box{
-  margin-top:20px;
-}
-.search-box input{
-  width:80%;
-  padding:15px;
-  font-size:18px;
-  border-radius:8px;
-  border:none;
-}
-
-.container{
-  max-width:1100px;
-  margin:40px auto;
-  background:#fff;
-  padding:30px;
-  border-radius:8px;
-}
-
-.item{
-  border-bottom:1px solid #ddd;
-  padding:15px 0;
-}
-.item h3{
-  margin:0;
-  color:#2c2c2c;
-}
-.item p{
-  margin:5px 0;
-  color:#555;
-}
-.item a{
-  color:#0066cc;
-  text-decoration:none;
-  font-weight:bold;
-}
-.item a:hover{ text-decoration:underline; }
-
-footer{
-  text-align:center;
-  color:#eee;
-  padding:20px;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Busca Jurídica</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
 <header>
-  <h1>Busca Geral do Portal Jurídico</h1>
-
+  <h1>Tira Dúvidas de Direito</h1>
   <nav>
     <a href="index.html">Início</a>
-    <a href="busca.html">Busca Geral</a>
-    <a href="codigo-civil.html">Código Civil</a>
-    <a href="codigo-penal.html">Código Penal</a>
-    <a href="clt.html">CLT</a>
-    <a href="constituicao.html">Constituição</a>
-    <a href="cpc.html">CPC</a>
-    <a href="cpp.html">CPP</a>
+    <a href="tira-duvidas.html">Tira Dúvidas</a>
+    <a href="busca.html">Busca por Assunto</a>
+    <a href="modelos.html">Modelos Jurídicos</a>
+    <a href="leis.html">Leis e Códigos</a>
   </nav>
-
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Digite qualquer assunto jurídico (ex: furto, férias, apelação, art. 5)">
-  </div>
 </header>
 
-<div class="container" id="results">
+<main>
+  <h2>Busca por Assunto</h2>
 
-<div class="item" data-keywords="artigo 5 direitos fundamentais constituicao">
-  <h3>Art. 5º – Direitos Fundamentais</h3>
-  <p>Constituição Federal</p>
-  <a href="constituicao.html">Abrir</a>
-</div>
+  <input type="text" id="busca" placeholder="Digite: agravo, apelação, CLT..." />
+  <ul id="resultados"></ul>
+</main>
 
-<div class="item" data-keywords="furto artigo 155 codigo penal">
-  <h3>Art. 155 – Furto</h3>
-  <p>Código Penal</p>
-  <a href="codigo-penal.html">Abrir</a>
-</div>
-
-<div class="item" data-keywords="homicidio artigo 121 codigo penal">
-  <h3>Art. 121 – Homicídio</h3>
-  <p>Código Penal</p>
-  <a href="codigo-penal.html">Abrir</a>
-</div>
-
-<div class="item" data-keywords="ferias artigo 129 clt">
-  <h3>Art. 129 – Férias</h3>
-  <p>CLT</p>
-  <a href="clt.html">Abrir</a>
-</div>
-
-<div class="item" data-keywords="justa causa artigo 482 clt">
-  <h3>Art. 482 – Justa Causa</h3>
-  <p>CLT</p>
-  <a href="clt.html">Abrir</a>
-</div>
-
-<div class="item" data-keywords="apelacao artigo 1009 cpc recurso">
-  <h3>Art. 1.009 – Apelação</h3>
-  <p>Código de Processo Civil</p>
-  <a href="cpc.html">Abrir</a>
-</div>
-
-<div class="item" data-keywords="denuncia artigo 41 cpp">
-  <h3>Art. 41 – Denúncia</h3>
-  <p>Código de Processo Penal</p>
-  <a href="cpp.html">Abrir</a>
-</div>
-
-<div class="item" data-keywords="procuracao modelo mandato">
-  <h3>Modelo de Procuração</h3>
-  <p>Modelo Jurídico</p>
-  <a href="procuracao.html">Abrir</a>
-</div>
-
-</div>
-
-<footer>
-© Tira Dúvidas de Direito
-</footer>
+<footer>© 2025 – Tira Dúvidas de Direito</footer>
 
 <script>
-const searchInput = document.getElementById("searchInput");
-const items = document.querySelectorAll(".item");
+const dados = [
+  "Agravo de Instrumento",
+  "Apelação Cível",
+  "Contestação",
+  "Impugnação",
+  "Código Civil",
+  "Código Penal",
+  "CLT",
+  "Constituição Federal"
+];
 
-searchInput.addEventListener("keyup", ()=>{
-  const value = searchInput.value.toLowerCase();
-  items.forEach(item=>{
-    item.style.display = item.dataset.keywords.includes(value) ? "block" : "none";
+const input = document.getElementById("busca");
+const lista = document.getElementById("resultados");
+
+input.addEventListener("keyup", () => {
+  lista.innerHTML = "";
+  const termo = input.value.toLowerCase();
+
+  dados.forEach(item => {
+    if (item.toLowerCase().includes(termo)) {
+      const li = document.createElement("li");
+      li.textContent = item;
+      lista.appendChild(li);
+    }
   });
 });
 </script>
-
 </body>
 </html>
