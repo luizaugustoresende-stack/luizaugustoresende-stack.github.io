@@ -1,14 +1,15 @@
-/* FUNDO DIRETO NO BODY */
+/* CSS COMPLETO DO SITE */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   height: 100%;
-  background: url("assets/images/fundo-biblioteca.jpg") no-repeat center center fixed;
+  background: url("https://images.unsplash.com/photo-1514894786530-2d6b8d7c7dc5?crop=entropy&cs=tinysrgb&fit=crop&h=1200&w=1920") no-repeat center center fixed;
   background-size: cover;
+  color: #000;
 }
 
-/* Mantém todo o resto do layout (menu, cards, rodapé) */
+/* CABEÇALHO */
 header {
   text-align: center;
   padding: 20px;
@@ -16,6 +17,7 @@ header {
   background: rgba(0,0,0,0.5);
 }
 
+/* MENU */
 .menu {
   display: flex;
   justify-content: center;
@@ -33,12 +35,14 @@ header {
   background-color: #555;
 }
 
+/* CONTEÚDO */
 .conteudo {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* CARDS */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -73,6 +77,7 @@ header {
   background-color: #555;
 }
 
+/* RODAPÉ */
 .rodape {
   text-align: center;
   padding: 15px;
