@@ -1,64 +1,111 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modelos Jurídicos - Tira Dúvidas de Direito</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Modelos Jurídicos - TiraDúvidasDeDireito</title>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762175535259498"
+     crossorigin="anonymous"></script>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+    background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #222;
+}
+.container {
+    background: rgba(255,255,255,0.95);
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    text-align: center;
+}
+h1 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+p {
+    font-size: 1.2em;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+li { margin: 10px 0; }
+a.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-weight: 500;
+    font-size: 1.1em;
+    background: #1e90ff;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+a.btn:hover { background: #ff4500; transform: translateY(-2px); }
+a.btn-voltar {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 18px;
+    background: #1e90ff;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+a.btn-voltar:hover { background: #ff4500; }
+@media (max-width: 600px) {
+    .container { padding: 20px; margin: 30px 10px; }
+    h1 { font-size: 2.2em; }
+    a.btn { font-size: 1em; padding: 10px 18px; }
+}
+</style>
 </head>
 <body>
-
-<header>
-  <h1>Modelos Jurídicos</h1>
-  <p>Petissões, recursos, procurações e impugnações</p>
-</header>
-
-<nav class="menu">
-  <a href="index.html">Início</a>
-  <a href="modelos.html">Modelos</a>
-  <a href="leis.html">Leis e Códigos</a>
-  <a href="tira-duvidas.html">Tira Dúvidas</a>
-  <a href="busca.html">Busca</a>
-  <a href="contato.html">Contato</a>
-</nav>
-
-<main class="conteudo">
-  <section class="cards">
-    <div class="card">
-      <h3>Petição Inicial</h3>
-      <p>Exemplo de petição inicial pronta para uso.</p>
-      <a href="modelos/peticao-inicial.html">Abrir</a>
-    </div>
-    <div class="card">
-      <h3>Recurso</h3>
-      <p>Modelos de recursos processuais.</p>
-      <a href="modelos/recurso.html">Abrir</a>
-    </div>
-    <div class="card">
-      <h3>Agravo</h3>
-      <p>Exemplo de agravos para diferentes situações.</p>
-      <a href="modelos/agravo.html">Abrir</a>
-    </div>
-    <div class="card">
-      <h3>Procuração</h3>
-      <p>Modelos de procuração para diversos fins.</p>
-      <a href="modelos/procuracao.html">Abrir</a>
-    </div>
-    <div class="card">
-      <h3>Impugnação</h3>
-      <p>Exemplo de impugnações processuais.</p>
-      <a href="modelos/impugnacao.html">Abrir</a>
-    </div>
-  </section>
-</main>
-
-<footer class="rodape">
-  <p>© 2026 Tira Dúvidas de Direito | Todos os direitos reservados</p>
-  <p>
-    <a href="privacidade.html">Política de Privacidade</a> |
-    <a href="aviso-legal.html">Aviso Legal</a>
-  </p>
-</footer>
-
+<div class="container">
+    <h1>Modelos Jurídicos</h1>
+    <p>Escolha o modelo que deseja consultar:</p>
+    <ul>
+        <li><a href="procuracao.html" class="btn">Procuração</a></li>
+        <li><a href="agravos.html" class="btn">Agravos</a></li>
+        <li><a href="embargos.html" class="btn">Embargos de Declaração</a></li>
+        <li><a href="apelacao.html" class="btn">Apelação</a></li>
+        <li><a href="embargos_infringentes.html" class="btn">Embargos Infringentes</a></li>
+        <li><a href="habeas_corpus.html" class="btn">Habeas Corpus</a></li>
+        <li><a href="habeas_data.html" class="btn">Habeas Data</a></li>
+        <li><a href="agravo_retido.html" class="btn">Agravo Retido</a></li>
+        <li><a href="recurso_especial.html" class="btn">Recurso Especial</a></li>
+        <li><a href="recurso_extraordinario.html" class="btn">Recurso Extraordinário</a></li>
+        <li><a href="agravo_impedimento.html" class="btn">Agravo de Impedimento</a></li>
+        <li><a href="recurso_inominado.html" class="btn">Recurso Inominado</a></li>
+        <li><a href="contestacao.html" class="btn">Contestação</a></li>
+        <li><a href="peticao_inicial.html" class="btn">Petição Inicial</a></li>
+        <li><a href="manifestacao.html" class="btn">Manifestação</a></li>
+        <li><a href="impugnacao.html" class="btn">Impugnação</a></li>
+        <!-- Você pode adicionar outros modelos conforme desejar -->
+    </ul>
+    <a href="index.html" class="btn-voltar">← Voltar à Página Inicial</a>
+</div>
 </body>
 </html>
