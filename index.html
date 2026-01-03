@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>TiraDúvidasDeDireito</title>
-    <style>
-        body {
-            background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            font-family: Arial, sans-serif;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
-        .conteudo {
-            background: rgba(255,255,255,0.9);
-            padding: 20px;
-            margin: 50px auto;
-            max-width: 900px;
-            border-radius: 10px;
-        }
-        h1 { text-align: center; }
-        ul { line-height: 1.6; }
-    </style>
+<meta charset="UTF-8">
+<title>TiraDúvidasDeDireito</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body {
+    background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #222;
+}
+.container {
+    background: rgba(255,255,255,0.95);
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+h1 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin: 15px 0;
+}
+a.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-weight: 500;
+    font-size: 1.1em;
+    background: #1e90ff;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+a.btn:hover {
+    background: #ff4500;
+}
+</style>
 </head>
 <body>
-    <div class="conteudo">
-        <h1>Bem-vindo ao TiraDúvidasDeDireito</h1>
-        <p>Consulte códigos, constituição, CLT, estatutos e modelos jurídicos completos.</p>
-        <h2>Leis disponíveis:</h2>
-        <ul>
-            <li><a href="codigo_civil.html">Código Civil</a></li>
-            <li><a href="codigo_penal.html">Código Penal</a></li>
-            <li><a href="constituicao.html">Constituição Federal</a></li>
-            <li><a href="clt.html">CLT</a></li>
-            <li><a href="estatutos.html">Estatutos</a></li>
-        </ul>
-        <h2>Modelos disponíveis:</h2>
-        <ul>
-            <li><a href="procuracao.html">Procuração</a></li>
-            <li><a href="agravos.html">Agravos</a></li>
-            <li><a href="embargos_declaracao.html">Embargos de Declaração</a></li>
-            <li><a href="apelacao.html">Apelação</a></li>
-            <li><a href="embargos_infringentes.html">Embargos Infringentes</a></li>
-            <li><a href="habeas_corpus.html">Habeas Corpus</a></li>
-            <li><a href="habeas_data.html">Habeas Data</a></li>
-            <li><a href="agravo_retido.html">Agravo Retido</a></li>
-            <li><a href="recurso_especial.html">Recurso Especial</a></li>
-            <li><a href="recurso_extraordinario.html">Recurso Extraordinário</a></li>
-            <li><a href="agravo_impedimento.html">Agravo de Impedimento</a></li>
-            <li><a href="recurso_inominado.html">Recurso Inominado</a></li>
-            <li><a href="contestacao.html">Contestação</a></li>
-            <li><a href="peticao_inicial.html">Petição Inicial</a></li>
-            <li><a href="manifestacao.html">Manifestação</a></li>
-            <li><a href="impugnacao.html">Impugnação</a></li>
-        </ul>
-        <h2>Outros recursos:</h2>
-        <ul>
-            <li><a href="aviso_legal.html">Aviso Legal</a></li>
-            <li><a href="tira_duvidas.html">Tira Dúvidas</a></li>
-            <li><a href="privacidade.html">Política de Privacidade</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href="busca.html">Busca</a></li>
-        </ul>
-    </div>
+<div class="container">
+    <h1>TiraDúvidasDeDireito</h1>
+    <p>Escolha abaixo a categoria que deseja acessar:</p>
+    <ul>
+        <li><a href="constituicao.html" class="btn">Leis</a></li>
+        <li><a href="modelos.html" class="btn">Modelos Jurídicos</a></li>
+        <li><a href="contato.html" class="btn">Contato</a></li>
+        <li><a href="privacidade.html" class="btn">Política de Privacidade</a></li>
+        <li><a href="aviso_legal.html" class="btn">Aviso Legal</a></li>
+    </ul>
+</div>
 </body>
 </html>
