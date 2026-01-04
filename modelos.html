@@ -2,16 +2,15 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Modelos de Peças Jurídicas</title>
+<title>Modelos de Peças Juridicas</title>
 
-<meta name="description" content="Modelos completos de peças jurídicas: petições, recursos, habeas corpus, agravos e mais.">
+<meta name="description" content="Modelos completos de pecas juridicas: peticoes, recursos, habeas corpus, agravos e mais.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762175535259498"
 crossorigin="anonymous"></script>
 
-<!-- Fonte -->
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -45,13 +44,10 @@ main{
   padding:45px;
   box-shadow:0 6px 22px rgba(0,0,0,.25);
 }
-h1{
-  margin-top:0;
-}
 .search-area{
   display:flex;
   gap:12px;
-  margin-bottom:25px;
+  margin-bottom:30px;
 }
 .search-area input,
 .search-area select{
@@ -105,7 +101,7 @@ footer{
 <div class="overlay">
 
 <header>
-  <h1>Modelos de Peças Jurídicas</h1>
+  <h1>Modelos de Pecas Juridicas</h1>
   <nav>
     <a href="index.html">Inicio</a>
     <a href="leis.html">Leis</a>
@@ -116,7 +112,7 @@ footer{
 <main>
 
 <div class="search-area">
-  <input type="text" id="buscaTexto" placeholder="Digite: apelação, habeas corpus, agravo...">
+  <input type="text" id="buscaTexto" placeholder="Digite: apelacao, habeas corpus, agravo...">
   <select id="buscaTipo">
     <option value="">Todos os tipos</option>
     <option value="Inicial">Peticoes Iniciais</option>
@@ -124,7 +120,7 @@ footer{
     <option value="Incidental">Pecas Incidentes</option>
     <option value="Constitucional">Constitucional</option>
   </select>
-  <button onclick="buscar()">🔍 Buscar</button>
+  <button onclick="filtrar()">🔍 Buscar</button>
 </div>
 
 <div id="listaModelos"></div>
@@ -145,7 +141,7 @@ const modelos = [
   {nome:"Impugnacao", tipo:"Incidental", desc:"Impugnacao a defesa ou documentos."},
 
   {nome:"Apelacao", tipo:"Recurso", desc:"Recurso contra sentenca."},
-  {nome:"Agravo de Instrumento", tipo:"Recurso", desc:"Recurso contra decisoes interlocutorias."},
+  {nome:"Agravo de Instrumento", tipo:"Recurso", desc:"Recurso contra decisao interlocutoria."},
   {nome:"Agravo Retido", tipo:"Recurso", desc:"Agravo interposto nos autos."},
   {nome:"Recurso Especial", tipo:"Recurso", desc:"Recurso ao STJ."},
   {nome:"Recurso Extraordinario", tipo:"Recurso", desc:"Recurso ao STF."},
@@ -156,35 +152,35 @@ const modelos = [
   {nome:"Habeas Data", tipo:"Constitucional", desc:"Acesso ou correcao de dados."}
 ];
 
-function buscar(){
-  const texto = document.getElementById("buscaTexto").value.toLowerCase();
-  const tipo = document.getElementById("buscaTipo").value;
+function render(lista){
   const div = document.getElementById("listaModelos");
   div.innerHTML = "";
-
-  let achou = false;
-
-  modelos.forEach(m=>{
-    if(
-      m.nome.toLowerCase().includes(texto) &&
-      (tipo==="" || m.tipo===tipo)
-    ){
-      achou = true;
-      div.innerHTML += `
-        <div class="modelo">
-          <h3>${m.nome}</h3>
-          <p>${m.desc}</p>
-          <p><strong>Tipo:</strong> ${m.tipo}</p>
-          <a href="#">Visualizar modelo</a>
-        </div>
-      `;
-    }
+  lista.forEach(m=>{
+    div.innerHTML += `
+      <div class="modelo">
+        <h3>${m.nome}</h3>
+        <p>${m.desc}</p>
+        <p><strong>Tipo:</strong> ${m.tipo}</p>
+        <a href="#">Visualizar modelo</a>
+      </div>
+    `;
   });
-
-  if(!achou){
-    div.innerHTML = "<p>Nenhum modelo encontrado.</p>";
-  }
 }
+
+function filtrar(){
+  const texto = document.getElementById("buscaTexto").value.toLowerCase();
+  const tipo = document.getElementById("buscaTipo").value;
+
+  const filtrados = modelos.filter(m =>
+    m.nome.toLowerCase().includes(texto) &&
+    (tipo==="" || m.tipo===tipo)
+  );
+
+  render(filtrados);
+}
+
+/* MOSTRAR TODOS AO ABRIR */
+render(modelos);
 </script>
 
 </body>
