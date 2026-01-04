@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <title>Modelos de Pecas Juridicas</title>
 
-<meta name="description" content="Modelos completos de pecas juridicas para consulta e estudo.">
+<meta name="description" content="Modelos completos de pecas juridicas: peticoes, recursos, habeas corpus, agravos e mais.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762175535259498"
 crossorigin="anonymous"></script>
 
@@ -34,6 +35,9 @@ main{
   padding:16px 26px;font-size:18px;
   background:#1f2a44;color:#fff;border:none;border-radius:8px;cursor:pointer;
 }
+.search-area button:hover{
+  background:#2f4172;
+}
 .modelo{padding:18px;border-bottom:1px solid #ddd;}
 .modelo a{font-weight:700;color:#1f2a44;cursor:pointer;}
 footer{text-align:center;margin:35px;color:#444;font-size:14px;}
@@ -50,6 +54,7 @@ footer{text-align:center;margin:35px;color:#444;font-size:14px;}
 .close{
   float:right;font-size:24px;cursor:pointer;font-weight:700;
 }
+pre{white-space:pre-wrap;font-family:'Merriweather',serif;font-size:14px;}
 </style>
 </head>
 
@@ -97,29 +102,305 @@ footer{text-align:center;margin:35px;color:#444;font-size:14px;}
 <script>
 const modelos = [
 {nome:"Peticao Inicial",tipo:"Inicial",texto:
-`EXMO. SR. DR. JUIZ DE DIREITO DA ___ VARA...
+`EXMO. SR. DR. JUIZ DE DIREITO DA ___ VARA CÍVEL
 
-[texto completo da peticao inicial]`},
+[Nome do autor], [nacionalidade], [estado civil], [profissão], portador do RG nº ___ e CPF nº ___, residente e domiciliado à [endereço completo], vem, respeitosamente, por seu advogado (instrumento de mandato anexo), propor
+
+AÇÃO DE [NOME DA AÇÃO] 
+
+em face de [Nome do réu], [qualificação completa], pelos fatos e fundamentos a seguir expostos:
+
+1. DOS FATOS
+[Descreva detalhadamente os fatos]
+
+2. DO DIREITO
+[Fundamente juridicamente]
+
+3. DOS PEDIDOS
+[Pedir o que deseja]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
 
 {nome:"Contestacao",tipo:"Incidental",texto:
-`EXMO. SR. DR. JUIZ...
+`EXMO. SR. DR. JUIZ DE DIREITO DA ___ VARA CÍVEL
 
-[texto completo da contestacao]`},
+[Nome do réu], por intermédio de seu advogado (instrumento de mandato anexo), vem apresentar
+
+CONTESTACAO
+
+à ação movida por [nome do autor], pelos fundamentos de fato e de direito a seguir expostos:
+
+1. PRELIMINARES
+[Argumentos preliminares]
+
+2. MÉRITO
+[Fundamentos de defesa]
+
+3. PEDIDOS
+[Pedidos do réu]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
+
+{nome:"Manifestacao",tipo:"Incidental",texto:
+`EXMO. SR. DR. JUIZ DE DIREITO DA ___ VARA CÍVEL
+
+[Parte interessada], por seu advogado, vem apresentar
+
+MANIFESTACAO
+
+sobre os autos do processo nº ___, pelos fundamentos de fato e de direito a seguir:
+
+[Texto completo da manifestação]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
+
+{nome:"Impugnacao",tipo:"Incidental",texto:
+`EXMO. SR. DR. JUIZ DE DIREITO DA ___ VARA CÍVEL
+
+[Parte interessada], por seu advogado, apresenta
+
+IMPUGNACAO
+
+aos argumentos apresentados pela parte contrária, com base em:
+
+[Fundamentos legais e jurisprudenciais]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
 
 {nome:"Apelacao",tipo:"Recurso",texto:
-`EXMO. SR. DR. JUIZ...
+`EXMO. SR. DR. JUIZ DE DIREITO DA ___ VARA CÍVEL
 
-[texto completo da apelacao]`},
+[Parte interessada], por seu advogado, vem interpor
+
+APELACAO
+
+contra a sentença proferida nos autos do processo nº ___, pelos fundamentos de fato e de direito a seguir:
+
+1. DOS FATOS
+[Descrever]
+
+2. DO DIREITO
+[Fundamentação]
+
+3. PEDIDOS
+[Pedidos]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
 
 {nome:"Agravo de Instrumento",tipo:"Recurso",texto:
-`EXMO. SR. DESEMBARGADOR...
+`EXMO. SR. DESEMBARGADOR PRESIDENTE DO TRIBUNAL DE JUSTICA
 
-[texto completo do agravo de instrumento]`},
+[Parte recorrente], por seu advogado, interpõe
+
+AGRAVO DE INSTRUMENTO
+
+em face da decisão interlocutória proferida nos autos do processo nº ___, pelos fundamentos a seguir:
+
+1. DOS FATOS
+[Descrever]
+
+2. DO DIREITO
+[Fundamentação]
+
+3. DOS PEDIDOS
+[Pedir providências]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
+
+{nome:"Agravo Retido",tipo:"Recurso",texto:
+`EXMO. SR. DR. JUIZ DE DIREITO DA ___ VARA CÍVEL
+
+[Parte recorrente], por seu advogado, apresenta
+
+AGRAVO RETIDO
+
+nos autos do processo nº ___, pelos motivos e fundamentos de fato e de direito a seguir:
+
+[Texto completo]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
+
+{nome:"Recurso Especial",tipo:"Recurso",texto:
+`EXMO. SR. MINISTRO PRESIDENTE DO STJ
+
+[Parte recorrente], por seu advogado, interpõe
+
+RECURSO ESPECIAL
+
+contra decisão do Tribunal de Justiça do Estado ___, pelos fundamentos de direito e jurisprudência:
+
+[Texto completo]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
+
+{nome:"Recurso Extraordinario",tipo:"Recurso",texto:
+`EXMO. SR. MINISTRO PRESIDENTE DO STF
+
+[Parte recorrente], por seu advogado, interpõe
+
+RECURSO EXTRAORDINARIO
+
+contra decisão do Tribunal de Justiça do Estado ___, com base em:
+
+[Fundamentação constitucional]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
+
+{nome:"Embargos de Declaracao",tipo:"Recurso",texto:
+`EXMO. SR. DR. JUIZ DE DIREITO DA ___ VARA CÍVEL
+
+[Parte interessada], por seu advogado, interpõe
+
+EMBARGOS DE DECLARACAO
+
+contra a decisão de fls. ___, com fundamento no art. 1.022 do CPC, pelos motivos a seguir:
+
+[Texto completo]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
+
+{nome:"Embargos Infringentes",tipo:"Recurso",texto:
+`EXMO. SR. DR. JUIZ DE DIREITO DA ___ VARA CÍVEL
+
+[Parte recorrente], por seu advogado, interpõe
+
+EMBARGOS INFRINGENTES
+
+contra acórdão não unânime, pelos fundamentos:
+
+[Texto completo]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
 
 {nome:"Habeas Corpus",tipo:"Constitucional",texto:
-`EXMO. SR. DESEMBARGADOR...
+`EXMO. SR. MINISTRO DO TRIBUNAL
 
-[texto completo do habeas corpus]`}
+[Paciente], por seu advogado, impetra
+
+HABEAS CORPUS
+
+com base no art. 5º, LXVIII, da CF/88, pelos fundamentos a seguir:
+
+[Texto completo]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`},
+
+{nome:"Habeas Data",tipo:"Constitucional",texto:
+`EXMO. SR. MINISTRO DO TRIBUNAL
+
+[Interessado], por seu advogado, impetra
+
+HABEAS DATA
+
+com fundamento no art. 5º, LXXII, da CF/88, para acesso/correcao de dados:
+
+[Texto completo]
+
+Nestes termos,
+Pede deferimento.
+
+[Local], [Data]
+
+________________________________
+[Advogado]
+OAB/UF nº ___
+`}
 ];
 
 function render(lista){
@@ -138,9 +419,7 @@ function render(lista){
 function filtrar(){
   const t=buscaTexto.value.toLowerCase();
   const tp=buscaTipo.value;
-  render(modelos.filter(m=>
-    m.nome.toLowerCase().includes(t)&&(tp===""||m.tipo===tp)
-  ));
+  render(modelos.filter(m=>m.nome.toLowerCase().includes(t)&&(tp===""||m.tipo===tp)));
 }
 
 function abrir(i){
@@ -148,9 +427,7 @@ function abrir(i){
   document.getElementById("modal").style.display="block";
 }
 
-function fechar(){
-  document.getElementById("modal").style.display="none";
-}
+function fechar(){document.getElementById("modal").style.display="none";}
 
 render(modelos);
 </script>
