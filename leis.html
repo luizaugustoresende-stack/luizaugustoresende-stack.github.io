@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Leis Completas - Tira Duvidas de Direito</title>
-
-<meta name="description" content="Leis completas: Constituição, CLT, Estatutos, Código Civil, Código Penal, Código Tributário, Código de Trânsito, Legislação Empresarial e mais.">
+<meta name="description" content="Leis completas para consulta: Constituição, CLT, Estatutos, CPC, CPP, Previdenciárias, Código Tributário, CTB, Legislação Empresarial.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762175535259498"
@@ -17,6 +16,7 @@ body{
   margin:0;
   font-family:'Merriweather',serif;
   background:url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") center/cover fixed;
+  background-size:cover;
 }
 .overlay{background:rgba(255,255,255,0.94);min-height:100vh;}
 header{background:#1f2a44;color:#fff;padding:26px;text-align:center;}
@@ -79,7 +79,7 @@ pre{white-space:pre-wrap;font-family:'Merriweather',serif;font-size:14px;}
 <main>
 
 <div class="search-area">
-  <input id="buscaTexto" placeholder="Digite: Constituição, CLT, Estatuto, Previdenciaria...">
+  <input id="buscaTexto" placeholder="Digite: Constituicao, CLT, Estatuto, Previdenciaria...">
   <select id="buscaTipo">
     <option value="">Todos</option>
     <option value="Constituicao">Constituição</option>
@@ -113,57 +113,85 @@ pre{white-space:pre-wrap;font-family:'Merriweather',serif;font-size:14px;}
 
 <script>
 const leis = [
-{nome:"Constituicao Federal",tipo:"Constituicao",texto:
-`CONSTITUICAO DA REPUBLICA FEDERATIVA DO BRASIL - 1988
-[Texto completo, todos os artigos]`},
-
-{nome:"CLT - Consolidacao das Leis do Trabalho",tipo:"Trabalhista",texto:
-`CONSOLIDACAO DAS LEIS DO TRABALHO - CLT
-[Texto completo, todos os artigos]`},
-
-{nome:"Estatuto da Crianca e do Adolescente",tipo:"Estatuto",texto:
-`ESTATUTO DA CRIANCA E DO ADOLESCENTE - ECA
-[Texto completo]`},
-
-{nome:"Estatuto do Idoso",tipo:"Estatuto",texto:
-`ESTATUTO DO IDOSO
-[Texto completo]`},
-
-{nome:"Estatuto da OAB",tipo:"Estatuto",texto:
-`ESTATUTO DA ORDEM DOS ADVOGADOS DO BRASIL
-[Texto completo]`},
-
-{nome:"Codigo de Defesa do Consumidor",tipo:"Civil",texto:
-`CODIGO DE DEFESA DO CONSUMIDOR
-[Texto completo]`},
-
-{nome:"Codigo de Processo Civil",tipo:"Civil",texto:
-`CODIGO DE PROCESSO CIVIL
-[Texto completo]`},
-
-{nome:"Codigo de Processo Penal",tipo:"Penal",texto:
-`CODIGO DE PROCESSO PENAL
-[Texto completo]`},
-
-{nome:"Lei Previdenciaria 1",tipo:"Previdenciaria",texto:
-`LEI PREVIDENCIARIA 1
-[Texto completo da lei previdenciaria]`},
-
-{nome:"Lei Previdenciaria 2",tipo:"Previdenciaria",texto:
-`LEI PREVIDENCIARIA 2
-[Texto completo da lei previdenciaria]`},
-
-{nome:"Codigo Tributario Nacional",tipo:"Tributario",texto:
-`CODIGO TRIBUTARIO NACIONAL
-[Texto completo]`},
-
-{nome:"Codigo de Transito Brasileiro",tipo:"Transito",texto:
-`CODIGO DE TRANSITO BRASILEIRO - CTB
-[Texto completo]`},
-
-{nome:"Legislacao Empresarial",tipo:"Empresarial",texto:
-`LEGISLACAO EMPRESARIAL
-[Texto completo]`}
+{
+nome:"Constituicao Federal",
+tipo:"Constituicao",
+texto:`CONSTITUICAO DA REPUBLICA FEDERATIVA DO BRASIL - 1988
+Art. 1º A República Federativa do Brasil...
+[conteúdo completo da Constituição aqui]`
+},
+{
+nome:"CLT - Consolidacao das Leis do Trabalho",
+tipo:"Trabalhista",
+texto:`CONSOLIDACAO DAS LEIS DO TRABALHO - CLT
+[conteúdo completo da CLT aqui]`
+},
+{
+nome:"Estatuto da Crianca e do Adolescente",
+tipo:"Estatuto",
+texto:`ESTATUTO DA CRIANCA E DO ADOLESCENTE
+[conteúdo completo do ECA]`
+},
+{
+nome:"Estatuto do Idoso",
+tipo:"Estatuto",
+texto:`ESTATUTO DO IDOSO
+[conteúdo completo do Estatuto do Idoso]`
+},
+{
+nome:"Estatuto da OAB",
+tipo:"Estatuto",
+texto:`ESTATUTO DA ORDEM DOS ADVOGADOS DO BRASIL
+[conteúdo completo do Estatuto da OAB]`
+},
+{
+nome:"Codigo de Defesa do Consumidor",
+tipo:"Civil",
+texto:`CODIGO DE DEFESA DO CONSUMIDOR
+[conteúdo completo do CDC]`
+},
+{
+nome:"Codigo de Processo Civil",
+tipo:"Civil",
+texto:`CODIGO DE PROCESSO CIVIL
+[conteúdo completo do CPC]`
+},
+{
+nome:"Codigo de Processo Penal",
+tipo:"Penal",
+texto:`CODIGO DE PROCESSO PENAL
+[conteúdo completo do CPP]`
+},
+{
+nome:"Lei Previdenciaria 1",
+tipo:"Previdenciaria",
+texto:`LEI PREVIDENCIARIA 1
+[conteúdo completo da lei previdenciaria 1]`
+},
+{
+nome:"Lei Previdenciaria 2",
+tipo:"Previdenciaria",
+texto:`LEI PREVIDENCIARIA 2
+[conteúdo completo da lei previdenciaria 2]`
+},
+{
+nome:"Codigo Tributario Nacional",
+tipo:"Tributario",
+texto:`CODIGO TRIBUTARIO NACIONAL
+[conteúdo completo do CTN]`
+},
+{
+nome:"Codigo de Transito Brasileiro",
+tipo:"Transito",
+texto:`CODIGO DE TRANSITO BRASILEIRO - CTB
+[conteúdo completo do CTB]`
+},
+{
+nome:"Legislacao Empresarial",
+tipo:"Empresarial",
+texto:`LEGISLACAO EMPRESARIAL
+[conteúdo completo da legislacao empresarial]`
+}
 ];
 
 function render(lista){
