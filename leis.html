@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Leis Completas - Tira Duvidas de Direito</title>
-<meta name="description" content="Leis completas para consulta: Constituição, CLT, Estatutos, CPC, CPP, Previdenciárias, Código Tributário, CTB, Legislação Empresarial.">
+<meta name="description" content="Leis completas para consulta: Constituição, CLT, Estatutos, CPC, CPP, Previdenciárias, Código Tributário, CTB e mais.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762175535259498"
@@ -18,38 +18,104 @@ body{
   background:url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") center/cover fixed;
   background-size:cover;
 }
-.overlay{background:rgba(255,255,255,0.94);min-height:100vh;}
-header{background:#1f2a44;color:#fff;padding:26px;text-align:center;}
-nav a{color:#fff;margin:0 16px;text-decoration:none;font-weight:700;}
+.overlay{
+  background:rgba(255,255,255,0.94);
+  min-height:100vh;
+}
+header{
+  background:#1f2a44;
+  color:#fff;
+  padding:26px;
+  text-align:center;
+}
+nav a{
+  color:#fff;
+  margin:0 16px;
+  text-decoration:none;
+  font-weight:700;
+}
 main{
-  max-width:1200px;margin:40px auto;background:#fff;
-  border-radius:10px;padding:45px;
+  max-width:1200px;
+  margin:40px auto;
+  background:#fff;
+  border-radius:10px;
+  padding:45px;
   box-shadow:0 6px 22px rgba(0,0,0,.25);
 }
-.search-area{display:flex;gap:12px;margin-bottom:30px;}
-.search-area input,select{
-  flex:1;padding:16px;font-size:18px;border:2px solid #999;border-radius:8px;
+.search-area{
+  display:flex;
+  gap:12px;
+  margin-bottom:30px;
+}
+.search-area input, select{
+  flex:1;
+  padding:16px;
+  font-size:18px;
+  border:2px solid #999;
+  border-radius:8px;
 }
 .search-area button{
-  padding:16px 26px;font-size:18px;
-  background:#1f2a44;color:#fff;border:none;border-radius:8px;cursor:pointer;
+  padding:16px 26px;
+  font-size:18px;
+  background:#1f2a44;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
 }
-.search-area button:hover{background:#2f4172;}
-.lei{padding:18px;border-bottom:1px solid #ddd;}
-.lei a{font-weight:700;color:#1f2a44;cursor:pointer;margin-right:12px;}
-footer{text-align:center;margin:35px;color:#444;font-size:14px;}
+.search-area button:hover {
+  background:#2f4172;
+}
 
+.lei{
+  padding:18px;
+  border-bottom:1px solid #ddd;
+}
+.lei a{
+  font-weight:700;
+  color:#1f2a44;
+  cursor:pointer;
+  margin-right:12px;
+}
+
+footer{
+  text-align:center;
+  margin:35px;
+  color:#444;
+  font-size:14px;
+}
+
+/* Modal */
 .modal{
-  display:none;position:fixed;top:0;left:0;width:100%;height:100%;
-  background:rgba(0,0,0,.7);z-index:999;
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  z-index:999;
 }
 .modal-content{
-  background:#fff;margin:5% auto;padding:30px;
-  max-width:900px;border-radius:8px;
-  max-height:80vh;overflow:auto;
+  background:#fff;
+  margin:5% auto;
+  padding:20px;
+  max-width:95%;
+  max-height:90vh;
+  border-radius:8px;
+  overflow:auto;
 }
-.close{float:right;font-size:24px;cursor:pointer;font-weight:700;}
-pre{white-space:pre-wrap;font-family:'Merriweather',serif;font-size:14px;}
+.modal iframe{
+  width:100%;
+  height:80vh;
+  border:none;
+}
+.close{
+  float:right;
+  font-size:24px;
+  cursor:pointer;
+  font-weight:700;
+}
 .download-btn{
   display:inline-block;
   padding:6px 12px;
@@ -59,8 +125,11 @@ pre{white-space:pre-wrap;font-family:'Merriweather',serif;font-size:14px;}
   text-decoration:none;
   font-weight:700;
   cursor:pointer;
+  margin-top:10px;
 }
-.download-btn:hover{background:#1f2a44;}
+.download-btn:hover{
+  background:#1f2a44;
+}
 </style>
 </head>
 
@@ -70,7 +139,7 @@ pre{white-space:pre-wrap;font-family:'Merriweather',serif;font-size:14px;}
 <header>
   <h1>Leis Completas</h1>
   <nav>
-    <a href="index.html">Inicio</a>
+    <a href="index.html">Início</a>
     <a href="modelos.html">Modelos</a>
     <a href="contato.html">Contato</a>
   </nav>
@@ -99,78 +168,117 @@ pre{white-space:pre-wrap;font-family:'Merriweather',serif;font-size:14px;}
 
 </main>
 
-<footer>© 2026 – Tira Duvidas de Direito</footer>
+<footer>© 2026 – Tira Dúvidas de Direito</footer>
 </div>
 
-<!-- MODAL -->
+<!-- Modal -->
 <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="fechar()">&times;</span>
-    <pre id="conteudo"></pre>
-    <a id="downloadLink" class="download-btn" download>Baixar Lei</a>
+    <iframe id="iframeLei"></iframe>
+    <a id="downloadLink" class="download-btn">Baixar Lei</a>
   </div>
 </div>
 
 <script>
-// --- Array com todas as leis antigas + novas ---
+// Lista de leis com URLs oficiais
 const leis = [
-{nome:"Constituicao Federal",tipo:"Constituicao",texto:`[CONTEÚDO COMPLETO DA CONSTITUIÇÃO]`},
-{nome:"CLT - Consolidacao das Leis do Trabalho",tipo:"Trabalhista",texto:`[CONTEÚDO COMPLETO DA CLT]`},
-{nome:"Estatuto da Crianca e do Adolescente",tipo:"Estatuto",texto:`[CONTEÚDO COMPLETO DO ECA]`},
-{nome:"Estatuto do Idoso",tipo:"Estatuto",texto:`[CONTEÚDO COMPLETO DO ESTATUTO DO IDOSO]`},
-{nome:"Estatuto da OAB",tipo:"Estatuto",texto:`[CONTEÚDO COMPLETO DO ESTATUTO DA OAB]`},
-{nome:"Codigo de Defesa do Consumidor",tipo:"Civil",texto:`[CONTEÚDO COMPLETO DO CDC]`},
-{nome:"Codigo de Processo Civil",tipo:"Civil",texto:`[CONTEÚDO COMPLETO DO CPC]`},
-{nome:"Codigo de Processo Penal",tipo:"Penal",texto:`[CONTEÚDO COMPLETO DO CPP]`},
-
-// --- Novas leis solicitadas ---
-{nome:"Lei Previdenciaria 1",tipo:"Previdenciaria",texto:`[CONTEÚDO COMPLETO DA LEI PREVIDENCIÁRIA 1]`},
-{nome:"Lei Previdenciaria 2",tipo:"Previdenciaria",texto:`[CONTEÚDO COMPLETO DA LEI PREVIDENCIÁRIA 2]`},
-{nome:"Codigo Tributario Nacional",tipo:"Tributario",texto:`[CONTEÚDO COMPLETO DO CTN]`},
-{nome:"Codigo de Transito Brasileiro",tipo:"Transito",texto:`[CONTEÚDO COMPLETO DO CTB]`},
-{nome:"Legislacao Empresarial",tipo:"Empresarial",texto:`[CONTEÚDO COMPLETO DA LEGISLAÇÃO EMPRESARIAL]`}
+  {
+    nome: "Constituicao Federal",
+    tipo: "Constituicao",
+    url: "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+  },
+  {
+    nome: "CLT - Consolidacao das Leis do Trabalho",
+    tipo: "Trabalhista",
+    url: "https://www.planalto.gov.br/ccivil_03/decreto-lei/Del5452.htm"
+  },
+  {
+    nome: "Estatuto da Crianca e do Adolescente",
+    tipo: "Estatuto",
+    url: "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+  },
+  {
+    nome: "Estatuto do Idoso",
+    tipo: "Estatuto",
+    url: "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+  },
+  {
+    nome: "Estatuto da OAB",
+    tipo: "Estatuto",
+    url: "https://www.planalto.gov.br/ccivil_03/leis/l8906.htm"
+  },
+  {
+    nome: "Codigo de Defesa do Consumidor",
+    tipo: "Civil",
+    url: "https://www.planalto.gov.br/ccivil_03/leis/l8078.htm"
+  },
+  {
+    nome: "Codigo de Processo Civil",
+    tipo: "Civil",
+    url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
+  },
+  {
+    nome: "Codigo de Processo Penal",
+    tipo: "Penal",
+    url: "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"
+  },
+  {
+    nome: "Lei Previdenciaria 1",
+    tipo: "Previdenciaria",
+    url: "https://www.planalto.gov.br/ccivil_03/leis/LEIxxxx-previdencia1.htm" // substituir pela URL oficial
+  },
+  {
+    nome: "Lei Previdenciaria 2",
+    tipo: "Previdenciaria",
+    url: "https://www.planalto.gov.br/ccivil_03/leis/LEIxxxx-previdencia2.htm" // substituir pela URL oficial
+  },
+  {
+    nome: "Codigo Tributario Nacional",
+    tipo: "Tributario",
+    url: "https://www.planalto.gov.br/ccivil_03/leis/L5172.htm"
+  },
+  {
+    nome: "Codigo de Transito Brasileiro",
+    tipo: "Transito",
+    url: "https://www.planalto.gov.br/ccivil_03/leis/L9503.htm"
+  },
+  {
+    nome: "Legislacao Empresarial",
+    tipo: "Empresarial",
+    url: "https://www.planalto.gov.br/ccivil_03/leis/LEIxxxx-empresarial.htm" // substituir pela URL oficial
+  }
 ];
 
-// --- Funções de render, filtro e modal ---
 function render(lista){
-  const div=document.getElementById("listaLeis");
-  div.innerHTML="";
-  lista.forEach((m,i)=>{
-    div.innerHTML+=`
+  const div = document.getElementById("listaLeis");
+  div.innerHTML = "";
+  lista.forEach((m,i) => {
+    div.innerHTML += `
       <div class="lei">
         <strong>${m.nome}</strong><br>
         Tipo: ${m.tipo}<br>
         <a onclick="abrir(${i})">Visualizar</a>
-        <a onclick="baixar(${i})" class="download-btn">Baixar</a>
       </div>`;
   });
 }
 
 function filtrar(){
-  const t=buscaTexto.value.toLowerCase();
-  const tp=buscaTipo.value;
-  render(leis.filter(m=>m.nome.toLowerCase().includes(t)&&(tp===""||m.tipo===tp)));
+  const t = document.getElementById("buscaTexto").value.toLowerCase();
+  const tp = document.getElementById("buscaTipo").value;
+  render(leis.filter(m => m.nome.toLowerCase().includes(t) && (tp===""||m.tipo===tp)));
 }
 
 function abrir(i){
-  const modal=document.getElementById("modal");
-  document.getElementById("conteudo").textContent=leis[i].texto;
-  const link=document.getElementById("downloadLink");
-  const blob=new Blob([leis[i].texto],{type:'text/plain'});
-  link.href=URL.createObjectURL(blob);
-  link.download=leis[i].nome.replace(/\s+/g,'_')+'.txt';
-  modal.style.display="block";
+  const lei = leis[i];
+  const iframe = document.getElementById("iframeLei");
+  iframe.src = lei.url;
+  document.getElementById("downloadLink").href = lei.url;
+  document.getElementById("downloadLink").download = lei.nome.replace(/\s+/g,'_') + '.html';
+  document.getElementById("modal").style.display = "block";
 }
 
 function fechar(){document.getElementById("modal").style.display="none";}
-
-function baixar(i){
-  const blob=new Blob([leis[i].texto],{type:'text/plain'});
-  const link=document.createElement('a');
-  link.href=URL.createObjectURL(blob);
-  link.download=leis[i].nome.replace(/\s+/g,'_')+'.txt';
-  link.click();
-}
 
 render(leis);
 </script>
