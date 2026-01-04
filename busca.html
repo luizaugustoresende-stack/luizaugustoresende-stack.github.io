@@ -1,118 +1,178 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Busca Jurídica - TiraDúvidasDeDireito</title>
+<title>Busca Jurídica Global</title>
 
-<!-- Google AdSense -->
+<meta name="description" content="Busca global de leis, códigos, estatutos e modelos de peças jurídicas.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762175535259498"
-     crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<!-- Fonte -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
 body{
-    background-image:url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1350&q=80');
-    background-size:cover;
-    background-attachment:fixed;
-    background-position:center;
-    margin:0;
-    font-family:'Roboto',sans-serif;
-    color:#222;
+  margin:0;
+  font-family:'Merriweather',serif;
+  background:url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") center/cover fixed;
 }
 .overlay{
-    background:rgba(0,0,0,0.6);
-    min-height:100vh;
-    padding:50px 15px;
+  background:rgba(255,255,255,0.95);
+  min-height:100vh;
 }
-.container{
-    max-width:1100px;
-    margin:auto;
-    background:rgba(255,255,255,0.97);
-    padding:45px;
-    border-radius:20px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.4);
+header{
+  background:#1f2a44;
+  color:#fff;
+  padding:22px;
+  text-align:center;
 }
-h1{
-    font-family:'Playfair Display',serif;
-    text-align:center;
-    font-size:3em;
-    margin-bottom:20px;
+nav a{
+  color:#fff;
+  margin:0 14px;
+  text-decoration:none;
+  font-weight:700;
+}
+main{
+  max-width:1100px;
+  margin:30px auto;
+  background:#fff;
+  border-radius:8px;
+  padding:35px;
+  box-shadow:0 4px 18px rgba(0,0,0,.25);
 }
 .search-box{
-    display:flex;
-    gap:10px;
-    margin-bottom:30px;
+  display:flex;
+  gap:12px;
+  margin-bottom:30px;
 }
 .search-box input{
-    flex:1;
-    padding:14px;
-    font-size:1.1em;
-    border-radius:10px;
-    border:1px solid #ccc;
+  flex:1;
+  padding:16px;
+  font-size:18px;
+  border:2px solid #aaa;
+  border-radius:6px;
 }
 .search-box button{
-    padding:14px 22px;
-    font-size:1.1em;
-    border:none;
-    border-radius:10px;
-    background:#1e90ff;
-    color:#fff;
-    cursor:pointer;
+  padding:16px 26px;
+  font-size:18px;
+  background:#1f2a44;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
 }
-.search-box button:hover{background:#ff4500;}
-.results{
-    margin-top:25px;
+.search-box button:hover{
+  background:#2e3f6f;
 }
 .result{
-    background:#f9f9f9;
-    padding:18px;
-    border-radius:12px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.15);
-    margin-bottom:15px;
+  padding:14px;
+  border-bottom:1px solid #ddd;
 }
 .result a{
-    text-decoration:none;
-    font-weight:500;
-    color:#1e3c72;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:700;
+  color:#1f2a44;
 }
-.voltar{
-    display:inline-block;
-    margin-top:35px;
-    padding:12px 22px;
-    background:#1e90ff;
-    color:#fff;
-    border-radius:10px;
-    text-decoration:none;
-    font-size:1.1em;
+.tag{
+  font-size:13px;
+  color:#666;
 }
-.voltar:hover{background:#ff4500;}
-@media(max-width:600px){
-    h1{font-size:2.4em;}
-    .search-box{flex-direction:column;}
+footer{
+  text-align:center;
+  margin:30px;
+  color:#444;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 <div class="overlay">
-<div class="container">
 
-<h1>Busca Jurídica</h1>
+<header>
+  <h1>Busca Jurídica Global</h1>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="leis.html">Leis</a>
+    <a href="modelos.html">Modelos</a>
+  </nav>
+</header>
+
+<main>
 
 <div class="search-box">
-<input type="text" id="searchInput" placeholder="Digite palavra-chave (ex: apelação, CPC, habeas corpus)">
-<button onclick="buscar()">Buscar</button>
+  <input type="text" id="campo" placeholder="Digite: CPC, apelação, CDC, habeas corpus...">
+  <button onclick="buscar()">🔍 Buscar</button>
 </div>
 
-<div class="results" id="results"></div>
+<div id="resultados"></div>
 
-<a href="index.html" class="voltar">← Voltar à Página Inicial</a>
+</main>
+
+<footer>
+© 2026 – Tira Dúvidas de Direito
+</footer>
 
 </div>
-</div>
 
-<script src="busca.js"></script>
+<script>
+const dados = [
+  // LEIS
+  {nome:"Constituição Federal", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"},
+  {nome:"Código Civil", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm"},
+  {nome:"Código Penal", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848.htm"},
+  {nome:"Código de Processo Civil", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"},
+  {nome:"Código de Processo Penal", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"},
+  {nome:"Código de Defesa do Consumidor", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/leis/l8078.htm"},
+  {nome:"Estatuto da Criança e do Adolescente", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"},
+  {nome:"Estatuto do Idoso", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"},
+  {nome:"Estatuto da OAB", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/leis/l8906.htm"},
+
+  // MODELOS
+  {nome:"Petição Inicial", tipo:"Modelo", link:"modelos.html"},
+  {nome:"Contestação", tipo:"Modelo", link:"modelos.html"},
+  {nome:"Apelação", tipo:"Modelo", link:"modelos.html"},
+  {nome:"Agravo de Instrumento", tipo:"Modelo", link:"modelos.html"},
+  {nome:"Embargos de Declaração", tipo:"Modelo", link:"modelos.html"},
+  {nome:"Habeas Corpus", tipo:"Modelo", link:"modelos.html"},
+  {nome:"Recurso Especial", tipo:"Modelo", link:"modelos.html"},
+  {nome:"Recurso Extraordinário", tipo:"Modelo", link:"modelos.html"}
+];
+
+function buscar(){
+  const termo = document.getElementById("campo").value.toLowerCase();
+  const div = document.getElementById("resultados");
+  div.innerHTML = "";
+
+  if(termo.trim()===""){
+    div.innerHTML = "<p>Digite algo para pesquisar.</p>";
+    return;
+  }
+
+  let achou = false;
+
+  dados.forEach(item=>{
+    if(item.nome.toLowerCase().includes(termo)){
+      achou = true;
+      div.innerHTML += `
+        <div class="result">
+          <a href="${item.link}" target="_blank">${item.nome}</a><br>
+          <span class="tag">${item.tipo}</span>
+        </div>
+      `;
+    }
+  });
+
+  if(!achou){
+    div.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+  }
+}
+</script>
+
 </body>
 </html>
