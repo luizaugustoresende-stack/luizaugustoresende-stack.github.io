@@ -1,177 +1,114 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Busca Jurídica Global</title>
+  <meta charset="UTF-8">
+  <title>Resultados da Busca</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Busca global de leis, códigos, estatutos e modelos de peças jurídicas.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 30px;
+    }
 
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762175535259498"
-crossorigin="anonymous"></script>
+    h1 {
+      text-align: center;
+    }
 
-<!-- Fonte -->
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    .resultado {
+      background: #fff;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
 
-<style>
-body{
-  margin:0;
-  font-family:'Merriweather',serif;
-  background:url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") center/cover fixed;
-}
-.overlay{
-  background:rgba(255,255,255,0.95);
-  min-height:100vh;
-}
-header{
-  background:#1f2a44;
-  color:#fff;
-  padding:22px;
-  text-align:center;
-}
-nav a{
-  color:#fff;
-  margin:0 14px;
-  text-decoration:none;
-  font-weight:700;
-}
-main{
-  max-width:1100px;
-  margin:30px auto;
-  background:#fff;
-  border-radius:8px;
-  padding:35px;
-  box-shadow:0 4px 18px rgba(0,0,0,.25);
-}
-.search-box{
-  display:flex;
-  gap:12px;
-  margin-bottom:30px;
-}
-.search-box input{
-  flex:1;
-  padding:16px;
-  font-size:18px;
-  border:2px solid #aaa;
-  border-radius:6px;
-}
-.search-box button{
-  padding:16px 26px;
-  font-size:18px;
-  background:#1f2a44;
-  color:#fff;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-}
-.search-box button:hover{
-  background:#2e3f6f;
-}
-.result{
-  padding:14px;
-  border-bottom:1px solid #ddd;
-}
-.result a{
-  text-decoration:none;
-  font-size:18px;
-  font-weight:700;
-  color:#1f2a44;
-}
-.tag{
-  font-size:13px;
-  color:#666;
-}
-footer{
-  text-align:center;
-  margin:30px;
-  color:#444;
-  font-size:14px;
-}
-</style>
+    .resultado h3 {
+      margin-top: 0;
+    }
+
+    .tipo {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .acoes a {
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background: #2c2c2c;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .acoes a:hover {
+      background: #000;
+    }
+  </style>
 </head>
-
 <body>
-<div class="overlay">
 
-<header>
-  <h1>Busca Jurídica Global</h1>
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="leis.html">Leis</a>
-    <a href="modelos.html">Modelos</a>
-  </nav>
-</header>
-
-<main>
-
-<div class="search-box">
-  <input type="text" id="campo" placeholder="Digite: CPC, apelação, CDC, habeas corpus...">
-  <button onclick="buscar()">🔍 Buscar</button>
-</div>
+<h1>Resultados da pesquisa</h1>
 
 <div id="resultados"></div>
 
-</main>
-
-<footer>
-© 2026 – Tira Dúvidas de Direito
-</footer>
-
-</div>
-
 <script>
-const dados = [
-  // LEIS
-  {nome:"Constituição Federal", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"},
-  {nome:"Código Civil", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm"},
-  {nome:"Código Penal", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848.htm"},
-  {nome:"Código de Processo Civil", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"},
-  {nome:"Código de Processo Penal", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"},
-  {nome:"Código de Defesa do Consumidor", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/leis/l8078.htm"},
-  {nome:"Estatuto da Criança e do Adolescente", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"},
-  {nome:"Estatuto do Idoso", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"},
-  {nome:"Estatuto da OAB", tipo:"Lei", link:"https://www.planalto.gov.br/ccivil_03/leis/l8906.htm"},
+  const params = new URLSearchParams(window.location.search);
+  const termo = params.get("q")?.toLowerCase() || "";
 
-  // MODELOS
-  {nome:"Petição Inicial", tipo:"Modelo", link:"modelos.html"},
-  {nome:"Contestação", tipo:"Modelo", link:"modelos.html"},
-  {nome:"Apelação", tipo:"Modelo", link:"modelos.html"},
-  {nome:"Agravo de Instrumento", tipo:"Modelo", link:"modelos.html"},
-  {nome:"Embargos de Declaração", tipo:"Modelo", link:"modelos.html"},
-  {nome:"Habeas Corpus", tipo:"Modelo", link:"modelos.html"},
-  {nome:"Recurso Especial", tipo:"Modelo", link:"modelos.html"},
-  {nome:"Recurso Extraordinário", tipo:"Modelo", link:"modelos.html"}
-];
+  const dados = [
+    // LEIS
+    { titulo: "Constituição Federal", tipo: "Lei", link: "constituicao.html" },
+    { titulo: "Código de Processo Civil", tipo: "Lei", link: "cpc.html" },
+    { titulo: "Código de Processo Penal", tipo: "Lei", link: "cpp.html" },
+    { titulo: "CLT", tipo: "Lei", link: "clt.html" },
+    { titulo: "Código de Defesa do Consumidor", tipo: "Lei", link: "cdc.html" },
+    { titulo: "Estatuto da Criança e do Adolescente", tipo: "Lei", link: "eca.html" },
+    { titulo: "Estatuto do Idoso", tipo: "Lei", link: "idoso.html" },
+    { titulo: "Estatuto da OAB", tipo: "Lei", link: "oab.html" },
+    { titulo: "Código Tributário Nacional", tipo: "Lei", link: "ctn.html" },
+    { titulo: "Código de Trânsito Brasileiro", tipo: "Lei", link: "ctb.html" },
 
-function buscar(){
-  const termo = document.getElementById("campo").value.toLowerCase();
-  const div = document.getElementById("resultados");
-  div.innerHTML = "";
+    // MODELOS
+    { titulo: "Petição Inicial", tipo: "Modelo", link: "peticao-inicial.html" },
+    { titulo: "Contestação", tipo: "Modelo", link: "contestacao.html" },
+    { titulo: "Apelação", tipo: "Modelo", link: "apelacao.html" },
+    { titulo: "Agravo de Instrumento", tipo: "Modelo", link: "agravo-instrumento.html" },
+    { titulo: "Embargos de Declaração", tipo: "Modelo", link: "embargos-declaracao.html" },
+    { titulo: "Habeas Corpus", tipo: "Modelo", link: "habeas-corpus.html" },
+    { titulo: "Recurso Especial", tipo: "Modelo", link: "recurso-especial.html" },
+    { titulo: "Recurso Extraordinário", tipo: "Modelo", link: "recurso-extraordinario.html" }
+  ];
 
-  if(termo.trim()===""){
-    div.innerHTML = "<p>Digite algo para pesquisar.</p>";
-    return;
-  }
+  const container = document.getElementById("resultados");
 
-  let achou = false;
+  const filtrados = dados.filter(item =>
+    item.titulo.toLowerCase().includes(termo)
+  );
 
-  dados.forEach(item=>{
-    if(item.nome.toLowerCase().includes(termo)){
-      achou = true;
-      div.innerHTML += `
-        <div class="result">
-          <a href="${item.link}" target="_blank">${item.nome}</a><br>
-          <span class="tag">${item.tipo}</span>
+  if (filtrados.length === 0) {
+    container.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+  } else {
+    filtrados.forEach(item => {
+      container.innerHTML += `
+        <div class="resultado">
+          <div class="tipo">${item.tipo}</div>
+          <h3>${item.titulo}</h3>
+          <div class="acoes">
+            <a href="${item.link}">Visualizar</a>
+            <a href="${item.link}" download>Baixar</a>
+          </div>
         </div>
       `;
-    }
-  });
-
-  if(!achou){
-    div.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+    });
   }
-}
 </script>
 
 </body>
