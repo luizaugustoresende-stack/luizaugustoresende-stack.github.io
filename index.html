@@ -1,167 +1,126 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Tira Dúvidas de Direito</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Tira dúvidas de direito com acesso a leis completas, códigos, estatutos e modelos jurídicos.">
+  <meta charset="UTF-8">
+  <title>Tira Dúvidas de Direito</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762175535259498"
+     crossorigin="anonymous"></script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762175535259498"
-crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      background: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+    }
 
-<style>
-body{
-  margin:0;
-  font-family:'Merriweather',serif;
-  background:url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") center/cover fixed;
-}
-.overlay{
-  background:rgba(255,255,255,0.92);
-  min-height:100vh;
-}
-header{
-  background:#1f2a44;
-  color:#fff;
-  padding:26px;
-  text-align:center;
-}
-nav a{
-  color:#fff;
-  margin:0 16px;
-  text-decoration:none;
-  font-weight:700;
-}
-.hero{
-  max-width:900px;
-  margin:60px auto;
-  background:#fff;
-  padding:50px;
-  border-radius:12px;
-  box-shadow:0 6px 22px rgba(0,0,0,.25);
-  text-align:center;
-}
-.hero h1{
-  font-size:36px;
-  margin-bottom:20px;
-}
-.hero p{
-  font-size:18px;
-  color:#444;
-}
-.search-box{
-  display:flex;
-  gap:12px;
-  margin-top:35px;
-}
-.search-box input{
-  flex:1;
-  padding:16px;
-  font-size:18px;
-  border:2px solid #999;
-  border-radius:8px;
-}
-.search-box button{
-  padding:16px 26px;
-  font-size:18px;
-  background:#1f2a44;
-  color:#fff;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-}
-.search-box button:hover{
-  background:#2f4172;
-}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  max-width:1100px;
-  margin:60px auto;
-}
-.card{
-  background:#fff;
-  padding:30px;
-  border-radius:12px;
-  box-shadow:0 6px 18px rgba(0,0,0,.18);
-  text-align:center;
-}
-.card a{
-  display:inline-block;
-  margin-top:15px;
-  text-decoration:none;
-  font-weight:700;
-  color:#1f2a44;
-}
-footer{
-  text-align:center;
-  margin:40px;
-  color:#444;
-  font-size:14px;
-}
-</style>
+    .overlay {
+      background: rgba(245, 245, 245, 0.88);
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #444;
+    }
+
+    .busca-home {
+      max-width: 600px;
+      margin: 40px auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .busca-home input {
+      flex: 1;
+      padding: 14px;
+      font-size: 18px;
+      border: 1px solid #999;
+      border-radius: 4px;
+    }
+
+    .busca-home button {
+      padding: 14px 20px;
+      font-size: 18px;
+      background: #2c2c2c;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .busca-home button:hover {
+      background: #000;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      font-size: 20px;
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
 </head>
-
 <body>
+
 <div class="overlay">
 
-<header>
-  <h1>Tira Dúvidas de Direito</h1>
+  <header>
+    <h1>Tira Dúvidas de Direito</h1>
+    <p>Leis completas, modelos de peças processuais e pesquisa jurídica</p>
+  </header>
+
+  <!-- BUSCA GLOBAL -->
+  <form class="busca-home" action="busca.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar em leis e modelos..." required>
+    <button type="submit">Pesquisar</button>
+  </form>
+
   <nav>
-    <a href="index.html">Início</a>
     <a href="leis.html">Leis</a>
     <a href="modelos.html">Modelos</a>
+    <a href="aviso-legal.html">Aviso Legal</a>
+    <a href="privacidade.html">Privacidade</a>
     <a href="contato.html">Contato</a>
   </nav>
-</header>
 
-<section class="hero">
-  <h1>Pesquise leis, códigos e estatutos</h1>
-  <p>Consulte a legislação brasileira na íntegra e modelos jurídicos prontos.</p>
-
-  <!-- BUSCA NA HOME -->
-  <div class="search-box">
-    <input id="buscaHome" placeholder="Ex: Constituição, CLT, Código Civil...">
-    <button onclick="buscar()">Pesquisar</button>
-  </div>
-</section>
-
-<section class="cards">
-  <div class="card">
-    <h3>Leis e Códigos</h3>
-    <p>Constituição, CLT, CPC, CPP, Estatutos e mais.</p>
-    <a href="leis.html">Acessar</a>
-  </div>
-  <div class="card">
-    <h3>Modelos Jurídicos</h3>
-    <p>Petições e recursos prontos para uso.</p>
-    <a href="modelos.html">Ver modelos</a>
-  </div>
-  <div class="card">
-    <h3>Dúvidas Frequentes</h3>
-    <p>Respostas claras sobre direito.</p>
-    <a href="tiraduvidas.html">Consultar</a>
-  </div>
-</section>
-
-<footer>
-© 2026 – Tira Dúvidas de Direito
-</footer>
+  <footer>
+    © 2026 – Tira Dúvidas de Direito
+  </footer>
 
 </div>
-
-<script>
-function buscar(){
-  const q = document.getElementById("buscaHome").value.trim();
-  if(q !== ""){
-    window.location.href = "leis.html?busca=" + encodeURIComponent(q);
-  }else{
-    window.location.href = "leis.html";
-  }
-}
-</script>
 
 </body>
 </html>
